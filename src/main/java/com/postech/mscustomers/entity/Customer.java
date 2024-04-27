@@ -23,7 +23,6 @@ public class Customer {
     private String nome;
 
     public Customer(CustomerDTO CustomerDTO) {
-        this.id = CustomerDTO.getId() == null ? this.id : UUID.fromString(CustomerDTO.getId());
         this.nome = CustomerDTO.getNome();
     }
     public List<Customer> toList(List<CustomerDTO> customerList) {

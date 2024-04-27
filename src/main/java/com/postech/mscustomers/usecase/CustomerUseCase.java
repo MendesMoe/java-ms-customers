@@ -10,9 +10,9 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 public class CustomerUseCase {
 
-    public static void validarInsertCustomer(Customer customerNew, Customer customerOld) {
-        if (customerOld!= null) {
-            throw new IllegalArgumentException("Cliente já existe.");
+    public static void validarInsertCustomer(Customer customerNew) {
+        if (customerNew.getNome() == null) {
+            throw new IllegalArgumentException("Nome do cliente não pode ser nulo");
         }
     }
 
