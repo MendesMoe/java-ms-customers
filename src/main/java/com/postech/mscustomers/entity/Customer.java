@@ -23,6 +23,7 @@ public class Customer {
     private String nome;
 
     public Customer(CustomerDTO CustomerDTO) {
+        this.id = UUID.randomUUID();
         this.nome = CustomerDTO.getNome();
     }
     public List<Customer> toList(List<CustomerDTO> customerList) {
@@ -31,4 +32,5 @@ public class Customer {
                 .map(Customer::new)
                 .collect(Collectors.toList());
     }
+
 }

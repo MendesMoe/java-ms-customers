@@ -18,6 +18,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @Slf4j
 @RestController
@@ -32,7 +33,7 @@ public class CustomerController {
     @PostMapping("")
     @Operation(summary = "Request for create a customer", responses = {
             @ApiResponse(description = "The new customers was created", responseCode = "201", content = @Content(schema = @Schema(implementation = Customer.class))),
-            @ApiResponse(description = "Customer Name Invalid", responseCode = "400", content = @Content(schema = @Schema(type = "string", example = "Nome do cliente não pode ser nulo")))
+            @ApiResponse(description = "Customer Name Invalid", responseCode = "400", content = @Content(schema = @Schema(type = "string", example = "O nome não pode ser nulo.")))
     })
     public ResponseEntity<?> createCustomer(@Valid @RequestBody CustomerDTO customerDTO) {
         log.info("PostMapping - createCustomer for customer [{}]", customerDTO.getNome());
@@ -79,6 +80,7 @@ public class CustomerController {
         try {
             Customer customerOld = customerGateway.findCustomer(id);
             Customer customerNew = new Customer(customerDTO);
+            customerNew.setId(UUID.fromString(id));
             CustomerUseCase.validarUpdateCliente(id, customerOld, customerNew);
             customerNew = customerGateway.updateCustomer(customerNew);
             return new ResponseEntity<>(customerNew, HttpStatus.OK);

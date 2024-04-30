@@ -12,7 +12,7 @@ public class CustomerUseCase {
 
     public static void validarInsertCustomer(Customer customerNew) {
         if (customerNew.getNome() == null) {
-            throw new IllegalArgumentException("Nome do cliente não pode ser nulo");
+            throw new IllegalArgumentException("O nome não pode ser nulo.");
         }
     }
 
