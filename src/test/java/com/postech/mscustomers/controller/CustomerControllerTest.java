@@ -152,33 +152,39 @@ class CustomerControllerTest {
             assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
         }
     }
-//
-//    @Nested
-//    class DeleteCustomer {
-//        @Test
-//        void devePermitirApagarCliente() throws Exception {
-//            CustomerDTO customerDTO = NewEntitiesHelper.gerarCustomerInsertRequest();
-//            Customer customer = new Customer(customerDTO);
-//
-//            when(customerGateway.findCustomer(customerDTO.getId())).thenReturn(customer);
-//
-//            mockMvc.perform(delete("/customers/{id}", customer.getId())
-//                            .contentType(MediaType.APPLICATION_JSON))
-//                    .andExpect(status().isOk());
-//        }
-//
-//        @Test
-//        void deveGerarExcecaoQuandoDeletarClienteNãoEncontrado() throws Exception {
-//            CustomerDTO customerDTO = NewEntitiesHelper.gerarCustomerInsertRequest();
-//            Customer customer = new Customer(customerDTO);
-//
-//            mockMvc.perform(delete("/customers/{id}", customer.getId())
-//                            .contentType(MediaType.APPLICATION_JSON))
-//                    .andExpect(status().isBadRequest()).andExpect(result -> {
-//                        String json = result.getResponse().getContentAsString(StandardCharsets.UTF_8);
-//                        assertThat(json).contains("Cliente não encontrado.");
-//                    });
-//        }
-//    }
+
+    @Nested
+    class DeleteCustomer {
+        @Test
+        void devePermitirApagarCliente() throws Exception {
+            // Arrange
+            String customerId = UUID.randomUUID().toString();
+            Customer customer = new Customer();
+            // Mock the behavior of customerGateway
+            when(customerGateway.findCustomer(customerId)).thenReturn(customer);
+
+            // Act
+            ResponseEntity<?> response = customerController.deleteCustomer(customerId);
+
+            // Assert
+            assertEquals(HttpStatus.OK, response.getStatusCode());
+            assertEquals("Cliente removido.", response.getBody());
+        }
+
+        @Test
+        void deveGerarExcecaoQuandoDeletarClienteNãoEncontrado() throws Exception {
+            // Arrange
+            String customerId = UUID.randomUUID().toString();
+            // Mock the behavior of customerGateway
+            when(customerGateway.findCustomer(customerId)).thenReturn(null);
+
+            // Act
+            ResponseEntity<?> response = customerController.deleteCustomer(customerId);
+
+            // Assert
+            assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+            assertEquals("Cliente não encontrado.", response.getBody());
+        }
+    }
 }
 

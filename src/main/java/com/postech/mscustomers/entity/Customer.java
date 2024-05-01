@@ -6,9 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
 import java.util.UUID;
-import java.util.stream.Collectors;
 
 @Data
 @Entity
@@ -16,7 +14,6 @@ import java.util.stream.Collectors;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Customer {
-
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
@@ -26,11 +23,4 @@ public class Customer {
         this.id = UUID.randomUUID();
         this.nome = CustomerDTO.getNome();
     }
-    public List<Customer> toList(List<CustomerDTO> customerList) {
-        return customerList
-                .stream()
-                .map(Customer::new)
-                .collect(Collectors.toList());
-    }
-
 }

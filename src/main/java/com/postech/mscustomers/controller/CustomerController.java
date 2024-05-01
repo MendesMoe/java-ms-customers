@@ -72,7 +72,7 @@ public class CustomerController {
     }
 
     @PutMapping("/{id}")
-    @Operation(summary = "Request for update a customer", responses = {
+    @Operation(summary = "Request for update a customer by ID", responses = {
             @ApiResponse(description = "The customers was updated", responseCode = "200", content = @Content(schema = @Schema(implementation = Customer.class)))
     })
     public ResponseEntity<?> updateCustomer(@PathVariable String id, @RequestBody @Valid CustomerDTO customerDTO) {
