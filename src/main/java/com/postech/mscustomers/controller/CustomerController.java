@@ -33,7 +33,7 @@ public class CustomerController {
     @PostMapping("")
     @Operation(summary = "Request for create a customer", responses = {
             @ApiResponse(description = "The new customers was created", responseCode = "201", content = @Content(schema = @Schema(implementation = Customer.class))),
-            @ApiResponse(description = "Customer Name Invalid", responseCode = "400", content = @Content(schema = @Schema(type = "string", example = "O nome não pode ser nulo.")))
+            @ApiResponse(description = "Customer Name Invalid", responseCode = "400", content = @Content(schema = @Schema(type = "string", example = "Campos inválidos ou faltando: cep, estado, cidade, endereco")))
     })
     public ResponseEntity<?> createCustomer(@Valid @RequestBody CustomerDTO customerDTO) {
         log.info("PostMapping - createCustomer for customer [{}]", customerDTO.getNome());

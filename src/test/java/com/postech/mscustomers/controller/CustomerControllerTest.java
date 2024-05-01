@@ -40,6 +40,12 @@ class CustomerControllerTest {
             // Arrange
             CustomerDTO customerDTO = new CustomerDTO();
             customerDTO.setNome("John Doe");
+            customerDTO.setCpf("123.456.789-00");
+            customerDTO.setEmail("john.doe@mail.com");000
+            customerDTO.setEndereco("Rua Legal,123");
+            customerDTO.setCidade("Sao Paulo");
+            customerDTO.setEstado("SP");
+            customerDTO.setCep("12345-000");
 
             when(customerGateway.createCustomer(any())).thenReturn(new Customer());
 

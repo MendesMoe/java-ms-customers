@@ -40,21 +40,6 @@ public class CustomerUseCaseTest {
         assertDoesNotThrow(() -> CustomerUseCase.validarUpdateCliente(customerId, customerToUpdate, customerNew));
     }
 
-//    @Test
-//    void testValidarUpdateCliente_IncorrectId_ThrowsException() {
-//        // Arrange
-//        String customerId = UUID.randomUUID().toString();
-//        Customer customerToUpdate = new Customer();
-//        customerToUpdate.setId(UUID.randomUUID());
-//        customerToUpdate.setNome("A");
-//        Customer customerNew = new Customer();
-//        customerNew.setNome("B");
-//        customerNew.setId(UUID.fromString(customerId));
-//
-//        // Act & Assert
-//        assertThrows(IllegalArgumentException.class, () -> CustomerUseCase.validarUpdateCliente(customerId, customerToUpdate, customerNew));
-//    }
-
     @Test
     void testValidarUpdateCliente_CustomerNotFound_ThrowsException() {
         // Arrange

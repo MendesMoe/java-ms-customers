@@ -18,9 +18,21 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     private String nome;
+    private String cpf;
+    private String email;
+    private String endereco;
+    private String cidade;
+    private String estado;
+    private String cep;
 
     public Customer(CustomerDTO CustomerDTO) {
         this.id = UUID.randomUUID();
         this.nome = CustomerDTO.getNome();
+        this.cpf = CustomerDTO.getCpf();
+        this.email = CustomerDTO.getEmail();
+        this.endereco = CustomerDTO.getEndereco();
+        this.cidade = CustomerDTO.getCidade();
+        this.estado = CustomerDTO.getEstado();
+        this.cep = CustomerDTO.getCep();
     }
 }

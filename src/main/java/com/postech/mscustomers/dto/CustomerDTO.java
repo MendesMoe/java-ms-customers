@@ -11,7 +11,18 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CustomerDTO {
-    @NotNull(message = "O nome não pode ser nulo.")
+    @NotNull
     private String nome;
-
+    @NotNull
+    private String cpf;
+    @NotNull
+    private String email;
+    @NotNull
+    private String endereco;
+    @NotNull
+    private String cidade;
+    @NotNull
+    private String estado;
+    @NotNull
+    private String cep;
 }
