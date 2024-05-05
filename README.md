@@ -26,3 +26,7 @@ https://github.com/MendesMoe/java-ms-customers/blob/main/src/main/resources/PosT
 A documentação detalhada da API está acessível na URL:
 http://localhost:8080/swagger-ui/index.html
 
+## Portas configuradas
+
+App: http://localhost:8080
+MySQL: jdbc:mysql://localhost:3306/orderdb

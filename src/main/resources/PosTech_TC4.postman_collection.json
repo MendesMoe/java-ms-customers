@@ -16,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"nome\": \"Bruno\",\r\n  \"endereco\": \"Rua Legal, 123\",\r\n  \"cidade\": \"Sao Paulo\",\r\n  \"estado\": \"SP\",\r\n  \"cep\": \"12345-000\"\r\n}",
+							"raw": "{\r\n  \"nome\": \"Bruno\",\r\n  \"endereco\": \"Rua Legal, 123\",\r\n  \"cidade\": \"Sao Paulo\",\r\n  \"estado\": \"SP\",\r\n  \"cep\": \"12345-000\",\r\n  \"email\": \"bruno@email.com\",\r\n  \"cpf\": \"123.456.789-00\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -103,7 +103,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/customers/fe120da4-24f8-41e4-90f5-150d1c69cd5f1",
+							"raw": "http://localhost:8080/customers/c0390cca-aba3-4c91-ac44-29ec5615f381",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -111,7 +111,7 @@
 							"port": "8080",
 							"path": [
 								"customers",
-								"fe120da4-24f8-41e4-90f5-150d1c69cd5f1"
+								"c0390cca-aba3-4c91-ac44-29ec5615f381"
 							]
 						}
 					},
@@ -170,6 +170,90 @@
 							"path": [
 								"customers",
 								"fe120da4-24f8-41e4-90f5-150d1c69cd5f"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ms-orders",
+			"item": [
+				{
+					"name": "1.0 Create Order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"idCustomer\": \"c0390cca-aba3-4c91-ac44-29ec5615f381\",\r\n  \"itens\": [{\"idProduct\": 2, \"quantity\": 1},{\"idProduct\": 1, \"quantity\": 2}]    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2.0 Find All Orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2.1 Find Order By Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/orders/33e61849-5dc3-4f47-ab21-c2041d6bda09",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"orders",
+								"33e61849-5dc3-4f47-ab21-c2041d6bda09"
 							]
 						}
 					},
