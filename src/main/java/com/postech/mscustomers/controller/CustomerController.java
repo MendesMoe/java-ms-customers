@@ -1,6 +1,5 @@
 package com.postech.mscustomers.controller;
 
-import com.postech.mscustomers.MscustomersApplication;
 import com.postech.mscustomers.dto.CustomerDTO;
 import com.postech.mscustomers.entity.Customer;
 import com.postech.mscustomers.gateway.CustomerGateway;
@@ -12,7 +11,6 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springdoc.core.converters.SchemaPropertyDeprecatingConverter;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -27,13 +25,11 @@ import java.util.UUID;
 public class CustomerController {
 
     private final CustomerGateway customerGateway;
-    private final MscustomersApplication mscustomersApplication;
-    private final SchemaPropertyDeprecatingConverter schemaPropertyDeprecatingConverter;
 
     @PostMapping("")
     @Operation(summary = "Request for create a customer", responses = {
             @ApiResponse(description = "The new customers was created", responseCode = "201", content = @Content(schema = @Schema(implementation = Customer.class))),
-            @ApiResponse(description = "Customer Name Invalid", responseCode = "400", content = @Content(schema = @Schema(type = "string", example = "Campos inválidos ou faltando: cep, estado, cidade, endereco")))
+            @ApiResponse(description = "Fields Invalid", responseCode = "400", content = @Content(schema = @Schema(type = "string", example = "Campos inválidos ou faltando: cep, estado, cidade, endereco")))
     })
     public ResponseEntity<?> createCustomer(@Valid @RequestBody CustomerDTO customerDTO) {
         log.info("PostMapping - createCustomer for customer [{}]", customerDTO.getNome());
