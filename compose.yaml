@@ -1,7 +1,9 @@
 services:
-  mysql:
+  mysql-customer:
     image: mysql:latest
     restart: always
+    container_name: mysql-customer
+    hostname: "mysql-customer"
     environment:
       MYSQL_DATABASE: 'customerdb'
       MYSQL_USER: 'customeruser'
@@ -9,3 +11,23 @@ services:
       MYSQL_ROOT_PASSWORD: '54321'
     ports:
       - '3306:3306'
+    networks:
+      - my_network
+
+
+  mscustomers:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - mysql-customer
+    environment:
+      MYSQL_HOSTNAME: mysql-customer
+    ports:
+      - 8081:8081
+    networks:
+      - my_network
+
+networks:
+  my_network:
+    driver: bridge
