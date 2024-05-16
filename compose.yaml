@@ -19,6 +19,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    hostname: "ms-customer"
     depends_on:
       - mysql-customer
     environment:
@@ -31,3 +32,4 @@ services:
 networks:
   my_network:
     driver: bridge
+    external: true
