@@ -21,6 +21,7 @@ services:
       dockerfile: Dockerfile
     depends_on:
       - mysql-customer
+    hostname: "ms-customers"
     environment:
       MYSQL_HOSTNAME: mysql-customer
     ports:
@@ -31,3 +32,4 @@ services:
 networks:
   my_network:
     driver: bridge
+    external: true
