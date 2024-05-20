@@ -103,7 +103,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8081/customers/22d8bb27-08f0-4c4f-be36-f88629458f93",
+							"raw": "http://localhost:8081/customers/b1f39499-60ba-47d0-bec1-20b70acdd23c",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -111,7 +111,7 @@
 							"port": "8081",
 							"path": [
 								"customers",
-								"22d8bb27-08f0-4c4f-be36-f88629458f93"
+								"b1f39499-60ba-47d0-bec1-20b70acdd23c"
 							]
 						}
 					},
@@ -132,7 +132,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8081/customers/22d8bb27-08f0-4c4f-be36-f88629458f93",
+							"raw": "http://localhost:8081/customers/b1f39499-60ba-47d0-bec1-20b70acdd23c",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -140,7 +140,7 @@
 							"port": "8081",
 							"path": [
 								"customers",
-								"22d8bb27-08f0-4c4f-be36-f88629458f93"
+								"b1f39499-60ba-47d0-bec1-20b70acdd23c"
 							]
 						}
 					},
@@ -161,7 +161,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8081/customers/22d8bb27-08f0-4c4f-be36-f88629458f93",
+							"raw": "http://localhost:8081/customers/b1f39499-60ba-47d0-bec1-20b70acdd23c",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -169,7 +169,7 @@
 							"port": "8081",
 							"path": [
 								"customers",
-								"22d8bb27-08f0-4c4f-be36-f88629458f93"
+								"b1f39499-60ba-47d0-bec1-20b70acdd23c"
 							]
 						}
 					},
@@ -577,7 +577,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Tablet Samsung\",\r\n    \"description\": \"S8 Plus\",\r\n    \"price\": 4000,\r\n    \"quantity_stk\": 23,\r\n    \"created_at\": \"2024-05-20T20:44:48\",\r\n    \"updated_at\": \"2024-05-20T20:44:48\"\r\n}",
+							"raw": "{\r\n    \"name\": \"Tablet Samsung\",\r\n    \"description\": \"S8 Plus\",\r\n    \"price\": 4000.00,\r\n    \"quantity_stk\": 23\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -637,7 +637,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/products/cb8f986a-0bd5-485c-8a4e-3f369ce13ecc",
+							"raw": "http://localhost:8080/api/products/b1d1a16f-69bd-4e2a-b6da-0ca417b756f4",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -646,7 +646,7 @@
 							"path": [
 								"api",
 								"products",
-								"cb8f986a-0bd5-485c-8a4e-3f369ce13ecc"
+								"b1d1a16f-69bd-4e2a-b6da-0ca417b756f4"
 							]
 						}
 					},
@@ -670,7 +670,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/products/cb8f986a-0bd5-485c-8a4e-3f369ce13ecc/2",
+							"raw": "http://localhost:8080/api/products/25aa579a-c0fe-4052-934a-c226da8fd2f9/2",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -679,7 +679,7 @@
 							"path": [
 								"api",
 								"products",
-								"cb8f986a-0bd5-485c-8a4e-3f369ce13ecc",
+								"25aa579a-c0fe-4052-934a-c226da8fd2f9",
 								"2"
 							]
 						}
@@ -701,7 +701,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/products/updateStockIncrease/cb8f986a-0bd5-485c-8a4e-3f369ce13ecc/3",
+							"raw": "http://localhost:8080/api/products/updateStockIncrease/25aa579a-c0fe-4052-934a-c226da8fd2f9/3",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -711,7 +711,7 @@
 								"api",
 								"products",
 								"updateStockIncrease",
-								"cb8f986a-0bd5-485c-8a4e-3f369ce13ecc",
+								"25aa579a-c0fe-4052-934a-c226da8fd2f9",
 								"3"
 							]
 						}
@@ -733,7 +733,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/products/updateStockDecrease/cb8f986a-0bd5-485c-8a4e-3f369ce13ecc/2",
+							"raw": "http://localhost:8080/api/products/updateStockDecrease/25aa579a-c0fe-4052-934a-c226da8fd2f9/2",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -743,8 +743,38 @@
 								"api",
 								"products",
 								"updateStockDecrease",
-								"cb8f986a-0bd5-485c-8a4e-3f369ce13ecc",
+								"25aa579a-c0fe-4052-934a-c226da8fd2f9",
 								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4.0 Delete Product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/products/b1d1a16f-69bd-4e2a-b6da-0ca417b756f4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products",
+								"b1d1a16f-69bd-4e2a-b6da-0ca417b756f4"
 							]
 						}
 					},
