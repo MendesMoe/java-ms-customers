@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "7b7bd979-d6bc-4ef8-9cbc-a70478c3c754",
+		"_postman_id": "1d4f74a7-f220-44e5-952d-7d74a578d6e8",
 		"name": "PosTech_TC4",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "12858581"
+		"_exporter_id": "15611332"
 	},
 	"item": [
 		{
@@ -16,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"nome\": \"Bruno\",\r\n  \"endereco\": \"Rua Legal, 123\",\r\n  \"cidade\": \"Sao Paulo\",\r\n  \"estado\": \"SP\",\r\n  \"cep\": \"12345-000\",\r\n  \"email\": \"bruno@email.com\",\r\n  \"cpf\": \"123.456.789-00\"\r\n}",
+							"raw": "{\r\n  \"nome\": \"Tiago\",\r\n  \"endereco\": \"Rua Um, 234\",\r\n  \"cidade\": \"Sao Paulo\",\r\n  \"estado\": \"SP\",\r\n  \"cep\": \"12345-000\",\r\n  \"email\": \"tiago@email.com\",\r\n  \"cpf\": \"604.357.130-78\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -103,7 +103,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8081/customers/c0390cca-aba3-4c91-ac44-29ec5615f381",
+							"raw": "http://localhost:8081/customers/22d8bb27-08f0-4c4f-be36-f88629458f93",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -111,7 +111,7 @@
 							"port": "8081",
 							"path": [
 								"customers",
-								"c0390cca-aba3-4c91-ac44-29ec5615f381"
+								"22d8bb27-08f0-4c4f-be36-f88629458f93"
 							]
 						}
 					},
@@ -124,7 +124,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nome\": \"Bruno Guerra\"\r\n}",
+							"raw": "{\r\n    \"nome\": \"Tiago Maffi\",\r\n    \"cpf\": \"604.357.130-78\",\r\n    \"email\": \"tiago@email.com\",\r\n    \"endereco\": \"Rua Um, 234\",\r\n    \"cidade\": \"Sao Paulo\",\r\n    \"estado\": \"SP\",\r\n    \"cep\": \"12345-000\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -132,7 +132,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8081/customers/1df4efd4-73be-49ad-87fa-3593205843c8",
+							"raw": "http://localhost:8081/customers/22d8bb27-08f0-4c4f-be36-f88629458f93",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -140,7 +140,7 @@
 							"port": "8081",
 							"path": [
 								"customers",
-								"1df4efd4-73be-49ad-87fa-3593205843c8"
+								"22d8bb27-08f0-4c4f-be36-f88629458f93"
 							]
 						}
 					},
@@ -161,7 +161,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8081/customers/fe120da4-24f8-41e4-90f5-150d1c69cd5f",
+							"raw": "http://localhost:8081/customers/22d8bb27-08f0-4c4f-be36-f88629458f93",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -169,7 +169,7 @@
 							"port": "8081",
 							"path": [
 								"customers",
-								"fe120da4-24f8-41e4-90f5-150d1c69cd5f"
+								"22d8bb27-08f0-4c4f-be36-f88629458f93"
 							]
 						}
 					},
@@ -187,7 +187,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"idCustomer\": \"c0390cca-aba3-4c91-ac44-29ec5615f381\",\r\n  \"itens\": [{\"idProduct\": 2, \"quantity\": 1},{\"idProduct\": 1, \"quantity\": 2}]    \r\n}",
+							"raw": "{\r\n    \"idCustomer\": \"22d8bb27-08f0-4c4f-be36-f88629458f93\",\r\n    \"itens\": [\r\n        {\r\n            \"idProduct\": \"cb8f986a-0bd5-485c-8a4e-3f369ce13ecc\",\r\n            \"quantity\": 1\r\n        },\r\n        {\r\n            \"idProduct\": \"b1d1a16f-69bd-4e2a-b6da-0ca417b756f4\",\r\n            \"quantity\": 2\r\n        }\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -254,6 +254,497 @@
 							"path": [
 								"orders",
 								"33e61849-5dc3-4f47-ab21-c2041d6bda09"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ms-delivery",
+			"item": [
+				{
+					"name": "1.0 Create DeliveryMan",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Jonh\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/deliveryman",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"deliveryman"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "1.1 List All DeliveryMan",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/deliveryman",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"deliveryman"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "1.2 List DeliveryMan By ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/deliveryman/282b7523-f9ce-488c-8bb5-b8ca0cd56031",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"deliveryman",
+								"282b7523-f9ce-488c-8bb5-b8ca0cd56031"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "1.3 Update DeliveryMan By ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Jonh Jonh\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/deliveryman/282b7523-f9ce-488c-8bb5-b8ca0cd56031",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"deliveryman",
+								"282b7523-f9ce-488c-8bb5-b8ca0cd56031"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "1.4 Delete DeliveryMan By ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/deliveryman/282b7523-f9ce-488c-8bb5-b8ca0cd56031",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"deliveryman",
+								"282b7523-f9ce-488c-8bb5-b8ca0cd56031"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2.0 Create Delivery",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idOrder\": \"39c13540-610f-4014-b6d7-cabce2ad4a55\",\r\n    \"idDeliveryMan\": \"82b30ef9-b253-433c-8268-513169bedbd2\",\r\n    \"deliveryStartDate\": \"2024-05-20 22:00:00\",\r\n    \"expectedDeliveryEndDate\": \"2024-05-21 22:00:00\",\r\n    \"status\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/delivery",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"delivery"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2.1 List All Delivery",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/delivery",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"delivery"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2.2 List Delivery By ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/delivery/b5a9c1cc-c2ee-44ef-ae99-c680718c9a83",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"delivery",
+								"b5a9c1cc-c2ee-44ef-ae99-c680718c9a83"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3.0 Update Delivery",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"b5a9c1cc-c2ee-44ef-ae99-c680718c9a83\",\r\n    \"idOrder\": \"39c13540-610f-4014-b6d7-cabce2ad4a55\",\r\n    \"idDeliveryMan\": \"82b30ef9-b253-433c-8268-513169bedbd2\",\r\n    \"deliveryStartDate\": \"2024-05-20 22:00:00\",\r\n    \"expectedDeliveryEndDate\": \"2024-05-22 23:00:00\",\r\n    \"status\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/delivery",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"delivery"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4.0 Get best route",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/delivery/best_route/82b30ef9-b253-433c-8268-513169bedbd2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"delivery",
+								"best_route",
+								"82b30ef9-b253-433c-8268-513169bedbd2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ms-products",
+			"item": [
+				{
+					"name": "1.0 Create Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Tablet Samsung\",\r\n    \"description\": \"S8 Plus\",\r\n    \"price\": 4000,\r\n    \"quantity_stk\": 23,\r\n    \"created_at\": \"2024-05-20T20:44:48\",\r\n    \"updated_at\": \"2024-05-20T20:44:48\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2.0 List All Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2.1 Find Product by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/products/cb8f986a-0bd5-485c-8a4e-3f369ce13ecc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products",
+								"cb8f986a-0bd5-485c-8a4e-3f369ce13ecc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2.2 Find ProductQtty",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/products/cb8f986a-0bd5-485c-8a4e-3f369ce13ecc/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products",
+								"cb8f986a-0bd5-485c-8a4e-3f369ce13ecc",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3.0 UpdateProducts (increase)",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/products/updateStockIncrease/cb8f986a-0bd5-485c-8a4e-3f369ce13ecc/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products",
+								"updateStockIncrease",
+								"cb8f986a-0bd5-485c-8a4e-3f369ce13ecc",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3.1 UpdateProducts (decrease)",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/products/updateStockDecrease/cb8f986a-0bd5-485c-8a4e-3f369ce13ecc/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products",
+								"updateStockDecrease",
+								"cb8f986a-0bd5-485c-8a4e-3f369ce13ecc",
+								"2"
 							]
 						}
 					},
