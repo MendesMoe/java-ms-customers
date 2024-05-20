@@ -2,6 +2,7 @@ package com.postech.mscustomers.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
@@ -16,11 +17,16 @@ public class SecurityConfigurations {
         http
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(authz -> authz
-                        .requestMatchers(
-                                "/customers", "/customers/**",
-                                "/swagger-ui/**", "/v3/api-docs",
-                                "/v3/api-docs/**", "/swagger-resources/**",
+                        .requestMatchers(HttpMethod.GET,
+                                "/customers",
+                                "/customers/**",
+                                "/swagger-ui/**",
+                                "/v3/api-docs",
+                                "/v3/api-docs/**",
+                                "/swagger-resources/**",
                                 "/webjars/**")
+                        .permitAll()
+                        .requestMatchers(HttpMethod.POST, "/customers")
                         .permitAll()
                         .anyRequest()
                         .authenticated());

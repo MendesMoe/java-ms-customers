@@ -27,7 +27,7 @@ public class CustomerController {
     private final CustomerGateway customerGateway;
 
     @PostMapping("")
-    @Operation(summary = "Request for create a customer", responses = {
+    @Operation(summary = "Request for create a new customer", responses = {
             @ApiResponse(description = "The new customers was created", responseCode = "201", content = @Content(schema = @Schema(implementation = Customer.class))),
             @ApiResponse(description = "Fields Invalid", responseCode = "400", content = @Content(schema = @Schema(type = "string", example = "Campos inválidos ou faltando: cep, estado, cidade, endereco")))
     })
